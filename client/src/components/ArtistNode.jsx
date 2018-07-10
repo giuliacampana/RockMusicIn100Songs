@@ -27,7 +27,7 @@ const Circle = styled.div`
 //gold: #926b38
 
 const Artist = styled.div`
-  z-index: 3;
+  z-index: 2;
   position absolute;
   color: white;
   font-size: 20px;
