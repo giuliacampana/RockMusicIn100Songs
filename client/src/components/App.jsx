@@ -1,15 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 import Timeline from './Timeline.jsx';
-import ArtistSideBox from './ArtistSideBox.jsx';
-import BottomBar from './BottomBar.jsx';
+import Diagram from './Diagram.jsx';
 
 const AppWrapper = styled.div`
   margin: 0;
+  background-color: #282828;
+  font-family: 'Inconsolata', monospace;;
 `;
 
 const Header = styled.div`
+  margin-top: 20px;
   text-align: center;
+  font-size: 38px;
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+`;
+
+const Subheader = styled.div`
+  font-size: 22px;
+  font-family: 'Architects Daughter', cursive;
+`;
+
+const DiagramWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 class App extends React.Component {
@@ -20,12 +35,13 @@ class App extends React.Component {
     return (
       <AppWrapper>
         <Header>
-          <h1>History of Rock Music in 100 Songs</h1>
-          <h2>across 70 years</h2>
+          <div>History of Rock Music in 100 Songs</div>
+          <Subheader>across 70 years</Subheader>
         </Header>
-        <Timeline />
-        <ArtistSideBox />
-        <BottomBar />
+        <DiagramWrapper>
+          <Timeline />
+          <Diagram />
+        </DiagramWrapper>
       </AppWrapper>
     );
   }

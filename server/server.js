@@ -7,6 +7,7 @@ const db = require("../db/db.js");
 const app = express();
 app.use(cors());
 
+
 app.use(express.static(path.join(__dirname, '../dist/')));
 app.use(express.static(path.join(__dirname, '../public/')));
 // app.use("", express.static(path.join(__dirname, "../public/")));
