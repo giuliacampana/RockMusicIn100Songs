@@ -14,16 +14,17 @@ const BarWrapper = styled.div`
 `;
 
 const SongListWrapper = styled.div`
-  background-color: white;
+  background-color: #404040;
   flex-basis: 60%;
   height: 50px;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid #606060;
+  border-left: 1px solid #606060;
+  border-right: 1px solid #606060;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: white;
 `;
 
 const SpaceBetween = styled.div`
@@ -32,12 +33,15 @@ const SpaceBetween = styled.div`
 `;
 
 const SongPlayerWrapper = styled.div`
-  background-color: white;
+  background-color: #404040;
   flex-basis: 20%;
   height: 50px;
-  border-top: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border-top: 1px solid #606060;
+  border-left: 1px solid #606060;
+  border-right: 1px solid #606060;
+  display: flex;
+  align-items: center;
+  color: white;
 `;
 
 const Header = styled.p`
@@ -61,17 +65,39 @@ const Song = styled.p`
   text-align: center;
   &:hover {
     cursor: pointer;
-    color: gray;
+    color: 282828;
   }
+`;
+
+const PlayButton = styled.div`
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin-left: 10px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const SongDescription = styled.div`
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
 `;
 
 class BottomBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      playing: false,
+    }
   }
 
   render() {
     return (
+      this.props.clicked ?
       <BarWrapper>
         <SongListWrapper>
             <Header>SONGS:</Header>
@@ -84,8 +110,17 @@ class BottomBar extends React.Component {
             </SongList>
         </SongListWrapper>
         <SpaceBetween></SpaceBetween>
-        <SongPlayerWrapper></SongPlayerWrapper>
+        <SongPlayerWrapper>
+          <PlayButton>
+            {/* <img src={'./play-button.jpg'} className="play"/> */}
+          </PlayButton>
+          <SongDescription>
+            <div>She Said She Said</div>
+            <div>The Beatles</div>
+          </SongDescription>
+        </SongPlayerWrapper>
       </BarWrapper>
+      : null
     );
   }
 }

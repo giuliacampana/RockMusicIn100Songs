@@ -4,12 +4,13 @@ import styled from 'styled-components';
 const SideTimeline = styled.div`
   display: flex;
   flex-direction: column;
-  width: 150px;
-  border: 1px solid black;
+  width: 100px;
 `;
 
-const Year = styled.h2`
-  padding: 0px 0px 500px 0px;
+const Year = styled.div`
+  height: 500px;
+  font-size: 26px;
+  color: white;
 `;
 
 const Timeline = () => (
