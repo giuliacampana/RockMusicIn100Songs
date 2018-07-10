@@ -6,6 +6,7 @@ const SideBoxWrapper = styled.div`
   border-color: #606060;
   color: white;
   position: fixed;
+  z-index: 4;
   right: 0;
   top: 25%;
   height: 250px;
@@ -16,8 +17,10 @@ const SideBoxWrapper = styled.div`
   background-color: #404040;
 `;
 
-const Album = styled.div`
+const Album = styled.img`
   border: 1px solid black;
+  background-image: url(${props => props.photo ? props.photo : null});
+  background-size: contain;
   height: 100px;
   width: 100px;
   margin-top: 15px;
@@ -45,14 +48,12 @@ const BandMembers = styled.div`
 
 
 const ArtistSideBox = (props) => (
-  props.clicked ? 
     <SideBoxWrapper>
-      <Album></Album>
-      <BandName>Beatles</BandName>
-      <YearsActive>1960-1970</YearsActive>
-      <BandMembers>George Harrison, John Lennon, Paul McCartney, Ringo Starr</BandMembers>
+      <Album photo={props.photo}></Album>
+      <BandName>{props.artistName}</BandName>
+      <YearsActive>{props.years}</YearsActive>
+      <BandMembers>{props.members}</BandMembers>
     </SideBoxWrapper>
-    : null
 );
 
 export default ArtistSideBox;

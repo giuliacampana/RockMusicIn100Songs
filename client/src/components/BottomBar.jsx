@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 const BarWrapper = styled.div`
@@ -25,6 +26,7 @@ const SongListWrapper = styled.div`
   justify-content: center;
   align-items: center;
   color: white;
+  z-index: 4;
 `;
 
 const SpaceBetween = styled.div`
@@ -42,6 +44,7 @@ const SongPlayerWrapper = styled.div`
   display: flex;
   align-items: center;
   color: white;
+  z-index: 4;
 `;
 
 const Header = styled.p`
@@ -72,8 +75,13 @@ const Song = styled.p`
 const PlayButton = styled.div`
   width: 40px;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid #282828;
+  border-radius: 8%;
+  background-color: #282828;
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &:hover {
     cursor: pointer;
   }
@@ -91,38 +99,50 @@ class BottomBar extends React.Component {
     super(props);
 
     this.state = {
-      playing: false,
+      selectedSong: '',
     }
+
+    // this.clickSong = this.clickSong.bind(this);
+  }
+
+  clickSong(songTitle) {
+    this.setState({
+      selectedSong: songTitle,
+    });
   }
 
   render() {
     return (
-      this.props.clicked ?
       <BarWrapper>
         <SongListWrapper>
             <Header>SONGS:</Header>
             <SpaceBetween2></SpaceBetween2>
             <SongList>
-                <Song>She Said She Said (1966)</Song>
-                <Song>Tomorrow Never Knows (1966)</Song>
-                <Song>A Day in the Life (1967)</Song>
-                <Song>Let It Be (1970)</Song>
+                {
+                  this.props.songs.map((song) => (
+                    <Song onClick={this.clickSong.bind(this, song.title)}>{song.title + ` (${song.year})`}</Song>
+                  ))
+                }
             </SongList>
         </SongListWrapper>
         <SpaceBetween></SpaceBetween>
         <SongPlayerWrapper>
           <PlayButton>
-            {/* <img src={'./play-button.jpg'} className="play"/> */}
+            <ion-icon name="play" size="large"></ion-icon>
           </PlayButton>
           <SongDescription>
-            <div>She Said She Said</div>
-            <div>The Beatles</div>
+            <div>{this.state.selectedSong}</div>
+            <div style={{"fontSize": "14px"}}>{this.props.artist}</div>
           </SongDescription>
         </SongPlayerWrapper>
       </BarWrapper>
-      : null
     );
   }
 }
 
 export default BottomBar;
+
+{/* <Song>She Said She Said (1966)</Song>
+                <Song>Tomorrow Never Knows (1966)</Song>
+                <Song>A Day in the Life (1967)</Song>
+                <Song>Let It Be (1970)</Song> */}
