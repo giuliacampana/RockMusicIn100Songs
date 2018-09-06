@@ -1,4 +1,6 @@
-# Rock Music in 100 Songs: A Data Visualization of the Evolution of Rock Music from 1940-2010
+# Rock Music in 100 Songs
+
+> A Data Visualization of the Evolution of Rock Music from 1940-2010
 
 This data visualization uses aggregated data from The Guardian's 'A history of modern music: Rock' and Silicon Valley Data Science's visualization here: https://svds.com/rockandroll/#bigbrotherandtheholdingcompany.
 
