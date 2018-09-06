@@ -2,7 +2,10 @@
 
 > A Data Visualization of the Evolution of Rock Music from 1940-2010
 
-This data visualization uses aggregated data from The Guardian's 'A history of modern music: Rock' and Silicon Valley Data Science's visualization here: https://svds.com/rockandroll/#bigbrotherandtheholdingcompany.
+This data visualization uses aggregated data from: 
+
+  - The Guardian's 'A history of modern music: Rock': https://www.theguardian.com/news/datablog/2011/jun/12/rock-music-playlist-download
+  - Silicon Valley Data Science's visualization here: https://svds.com/rockandroll/#bigbrotherandtheholdingcompany
 
 The nodes represent artists that appear on The Guardian's playlist and are spread vertically by artist's earliest song on said playlist. The size of the nodes is loosely based on the number of songs that appear on the playlist.
 
