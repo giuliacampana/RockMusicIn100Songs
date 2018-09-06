@@ -12,6 +12,7 @@ const BarWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  z-index: 4;
 `;
 
 const SongListWrapper = styled.div`
@@ -21,6 +22,7 @@ const SongListWrapper = styled.div`
   border-top: 1px solid #606060;
   border-left: 1px solid #606060;
   border-right: 1px solid #606060;
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -41,6 +43,7 @@ const SongPlayerWrapper = styled.div`
   border-top: 1px solid #606060;
   border-left: 1px solid #606060;
   border-right: 1px solid #606060;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   color: white;

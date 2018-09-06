@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const SideBoxWrapper = styled.div`
   border: 1px solid white;
+  border-radius: 10px;
   border-color: #606060;
   color: white;
   position: fixed;

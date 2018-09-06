@@ -1,7 +1,4 @@
 import React from 'react';
-// import Graph from 'react-graph-vis';
-// import { InteractiveForceGraph, ForceGraph, ForceGraphNode, ForceGraphLink, ForceGraphArrowLink } from 'react-vis-force';
-// import { ForceGraph2D } from 'react-force-graph';
 import styled from 'styled-components';
 import axios from 'axios';
 import ArtistNode from './ArtistNode.jsx';
@@ -17,7 +14,7 @@ class Diagram extends React.Component {
     super(props);
 
     this.state = {
-      nodeClicked: '',
+      nodeClicked: null,
       nodeClickedInfluenced: [],
       nodeClickedInfluencedBy: [],
       artists: [],
@@ -66,7 +63,7 @@ class Diagram extends React.Component {
             return <ArtistNode artist={artist} sendClickedNode={this.onNodeClick} />
           })
         }
-        { this.state.nodeClicked !== '' ? 
+        { this.state.nodeClicked ? 
           <div>
             <ArtistSideBox artistName={this.state.nodeClicked.name} years={this.state.nodeClicked.years} members={this.state.nodeClicked.members} photo={this.state.nodeClicked.photo} />
             <BottomBar artist={this.state.nodeClicked.name} songs={this.state.nodeClicked.songs} />
